@@ -13,3 +13,7 @@ main {
 article {
 padding: 1cm;
 }
+
+article p {
+    text-align: justify;
+}
