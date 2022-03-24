@@ -13,6 +13,8 @@ text-align: center;
     width: 100%;
 }
 
+/* mit img vor dem Punkt, werden die gesamten Bilder mit dem Namen User angeschrieben*/
+
 .user{
     border-radius: 50%;
     margin-top: -50px;
