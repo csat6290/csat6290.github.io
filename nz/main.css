@@ -1,8 +1,14 @@
 /* Stile für die Neuseelandreise */
 
+
+/* Google Fonts reinladen */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+
 body {
     background-color: #eeeeee;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    
+    font-family: 'Open Sans', sans-serif;
 }
 
 header {
