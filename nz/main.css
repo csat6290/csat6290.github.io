@@ -90,5 +90,5 @@ footer .next {
     padding: 0.5em;
     width: 2em;
     text-align: center;
-    display: block;
+    display: inline-block;
 }
