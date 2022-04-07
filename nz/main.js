@@ -75,14 +75,17 @@ for (let etappe of ETAPPEN) {
 }
 
 // Doc Hütten anzeigen
+//for ist eine Vorschleife
 
 for (let hut of HUTS) {
  let popup = `
- <h3> ${hut.name} <h3>
- <ul> 
- <li> geogr. Länge: ${hut.lng}</li>
- <li> geogr. Breite: ${hut.lat}</li>
- </ul>
+ <h3>${hut.name}</h3>
+ <h4>${hut.region}</h4>
+ <hr>
+ <p>${hut.info}</p>
+ <img src="${hut.image}" alt="Vorschaubild">
+ <hr>
+ <a href="${hut.link}" target= "Neuseeland">Link zur Hütte</a>
  `; 
  L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
 }
