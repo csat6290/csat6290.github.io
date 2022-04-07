@@ -60,7 +60,7 @@ L.marker([lat, lng]).addTo(map)
 
 
 for (let etappe of ETAPPEN) {
-    
+
     let popup = `
 <h3> ${etappe.titel} (Etappe ${etappe.nr}) </h3>
 <ul>
@@ -74,8 +74,8 @@ for (let etappe of ETAPPEN) {
     L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
 
     //Etappennavigation erweitern
-    let link =` <a href="https://${etappe.github}.github.io/nz/" class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
-    
+    let link = ` <a href="https://${etappe.github}.github.io/nz/" class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
+
     document.querySelector("#navigation").innerHTML += link;
 
 }
@@ -84,7 +84,7 @@ for (let etappe of ETAPPEN) {
 //for ist eine Vorschleife
 
 for (let hut of HUTS) {
- let popup = `
+    let popup = `
  <h3>${hut.name}</h3>
  <h4>${hut.region}</h4>
  <hr>
@@ -92,6 +92,6 @@ for (let hut of HUTS) {
  <img src="${hut.image}" alt="Vorschaubild">
  <hr>
  <a href="${hut.link}" target= "Neuseeland">Link zur Hütte</a>
- `; 
- L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
+ `;
+    L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
 }
