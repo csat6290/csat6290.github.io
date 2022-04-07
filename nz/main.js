@@ -16,12 +16,19 @@ console.log('text');
 console.log('id="map"');
 console.log(`latitude = ${lat} `);
 
-
-
-
 // consoles sind arrays
 
 // coords sind die Koordinaten
+
+let popup = `
+<h3>Dunedin</h3>
+<ul>
+<li>geogr. Länge: ${lng}</li>
+<li>geogr. Breite: ${lat}</li>
+</ul>
+`
+
+// popup Liste erstellt mit einer Variable
 
 let map = L.map('map').setView(coords, zoom);
 
@@ -32,6 +39,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker([lat, lng]).addTo(map)
-    .bindPopup('<h3>Dunedin</h3>')
+    .bindPopup(popup)
     .openPopup();
 
