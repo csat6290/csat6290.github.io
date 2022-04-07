@@ -6,24 +6,25 @@ let lng = 170.503611;
 let zoom = 13;
 
 let coords = [-45.874167, 170.503611];
-console.log(coords)
-console.log(coords[0]);
-console.log(coords[1]);
-console.log(coords.length);
 
-console.log("text");
-console.log('text');
-console.log('id="map"');
-console.log(`latitude = ${lat} `);
+//console.log(coords)
+//console.log(coords[0]);
+//console.log(coords[1]);
+//console.log(coords.length);
 
-console.log(ETAPPEN);
-console.log(ETAPPEN[0]);
-console.log(ETAPPEN[0].nr);
-console.log(ETAPPEN[0].github);
-console.log(ETAPPEN[0].wikipedia);
-console.log(ETAPPEN[0].titel);
-console.log(ETAPPEN[0].lat);
-console.log(ETAPPEN[0].lng);
+//console.log("text");
+//console.log('text');
+//console.log('id="map"');
+//console.log(`latitude = ${lat} `);
+
+//console.log(ETAPPEN);
+//console.log(ETAPPEN[0]);
+//console.log(ETAPPEN[0].nr);
+//console.log(ETAPPEN[0].github);
+//console.log(ETAPPEN[0].wikipedia);
+//console.log(ETAPPEN[0].titel);
+//console.log(ETAPPEN[0].lat);
+//console.log(ETAPPEN[0].lng);
 
 //Etappe in der Konsole ansprechen
 
