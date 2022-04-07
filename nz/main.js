@@ -57,3 +57,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([lat, lng]).addTo(map)
     .bindPopup(popup)
     .openPopup();
+
+
+for (let etappe of ETAPPEN) {
+    //console.log(etappe);
+    L.marker([etappe.lat, etappe.lng]).addTo(map);
+}
