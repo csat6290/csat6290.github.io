@@ -74,7 +74,10 @@ for (let etappe of ETAPPEN) {
     L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
 
     //Etappennavigation erweitern
+    let link =` <a href="https://${etappe.github}.github.io/nz/">${etappe.nr}</a>`;
     
+    document.querySelector("#navigation").innerHTML += link;
+
 }
 
 // Doc Hütten anzeigen
