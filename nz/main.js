@@ -2,12 +2,18 @@
 // einzeliger Kommentar
 
 let lat = -45.874167;
-
 let lng = 170.503611;
-
 let zoom = 13;
 
-let map = L.map('map').setView([lat, lng], zoom);
+let coords = [-45.874167, 170.503611 ];
+console.log(coords)
+console.log(coords[0]);
+console.log(coords[1]);
+console.log(coords.length);
+
+// coords sind die Koordinaten
+
+let map = L.map('map').setView(coords, zoom);
 
 // let sind die Variablen
 
