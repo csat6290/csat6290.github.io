@@ -84,5 +84,5 @@ for (let hut of HUTS) {
  <li> geogr. Breite: ${hut.lat}</li>
  </ul>
  `; 
- L.marker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
+ L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
 }
