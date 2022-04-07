@@ -74,13 +74,15 @@ for (let etappe of ETAPPEN) {
     L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
 }
 
-for (let huts of HUTS) {
+// Doc Hütten anzeigen
+
+for (let hut of HUTS) {
  let popup = `
- <h3> ${huts.name} <h3>
+ <h3> ${hut.name} <h3>
  <ul> 
- <li> geogr. Länge: ${huts.lng}</li>
- <li> geogr. Breite: ${huts.lat}</li>
+ <li> geogr. Länge: ${hut.lng}</li>
+ <li> geogr. Breite: ${hut.lat}</li>
  </ul>
- ` 
- L.marker([huts.lat, huts.lng]).addTo(map).bindPopup(popup);
+ `; 
+ L.marker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
 }
