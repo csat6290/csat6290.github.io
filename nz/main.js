@@ -5,7 +5,7 @@ let lat = -45.874167;
 let lng = 170.503611;
 let zoom = 13;
 
-let coords = [-45.874167, 170.503611 ];
+let coords = [-45.874167, 170.503611];
 console.log(coords)
 console.log(coords[0]);
 console.log(coords[1]);
@@ -15,6 +15,8 @@ console.log("text");
 console.log('text');
 console.log('id="map"');
 console.log(`latitude = ${lat} `);
+
+console.log(ETAPPEN);
 
 // consoles sind arrays
 
@@ -41,4 +43,3 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([lat, lng]).addTo(map)
     .bindPopup(popup)
     .openPopup();
-
