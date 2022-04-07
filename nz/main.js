@@ -17,20 +17,33 @@ console.log('id="map"');
 console.log(`latitude = ${lat} `);
 
 console.log(ETAPPEN);
+console.log(ETAPPEN[0]);
+console.log(ETAPPEN[0].nr);
+console.log(ETAPPEN[0].github);
+console.log(ETAPPEN[0].wikipedia);
+console.log(ETAPPEN[0].titel);
+console.log(ETAPPEN[0].lat);
+console.log(ETAPPEN[0].lng);
+
+//Etappe in der Konsole ansprechen
+
 
 // consoles sind arrays
 
 // coords sind die Koordinaten
 
 let popup = `
-<h3>Dunedin</h3>
+<h3> ${ETAPPEN[3].titel} (Etappe ${ETAPPEN[3].nr}) </h3>
 <ul>
-<li>geogr. Länge: ${lng}</li>
-<li>geogr. Breite: ${lat}</li>
+<li>geogr. Länge: ${ETAPPEN[3].lng}</li>
+<li>geogr. Breite: ${ETAPPEN[3].lat}</li>
+<li><a href="${ETAPPEN[3].wikipedia}">Link zur Wikipediaseite</a></li>
+<li><a href="${ETAPPEN[3].github}">Link zur Etappenseite</a></li>
 </ul>
-`
+`;
 
-// popup Liste erstellt mit einer Variable
+// popup Liste erstellt mit einer Variable und anschließend die Etappenvariable benutzt um die Etappe zu beschriften
+
 
 let map = L.map('map').setView(coords, zoom);
 
