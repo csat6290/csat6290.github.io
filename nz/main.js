@@ -88,6 +88,6 @@ statusColor = "green";
      statusColor = "red";
  }
     L.circleMarker([hut.lat, hut.lng], {
-        color: statusColor
+        color: statusColor,
     }).addTo(map).bindPopup(popup);
 }
