@@ -54,7 +54,7 @@ for (let etappe of ETAPPEN) {
 </ul>
 `;
     //console.log(etappe);
-    let navClass= "etappenLink"
+    let navClass = "etappenLink"
     let mrk = L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
     if (etappe.nr == 4) {
         mrk.openPopup();
@@ -81,20 +81,21 @@ for (let hut of HUTS) {
  <hr>
  <a href="${hut.link}" target= "Neuseeland">Link zur Hütte</a>
  `;
- let statusColor;
- if (hut.open == true) {
-statusColor = "green";
- } else {
-     statusColor = "red";
- }
+    let statusColor;
+    if (hut.open == true) {
+        statusColor = "green";
+    } else {
+        statusColor = "red";
+    }
     L.circleMarker([hut.lat, hut.lng], {
         color: statusColor,
     }).addTo(map).bindPopup(popup);
 }
 
 let layerControl = L.control.layers({
-    "Open Street Map": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}
-    ),
+    "Open Street Map": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }),
 
     "Open Street Map (topographisch)": L.tileLayer.provider("OpenTopoMap"),
 
@@ -115,5 +116,6 @@ L.control.scale({
 }).addTo(map)
 
 let miniMap = new L.Control.MiniMap(
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}
-     )).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    })).addTo(map);
