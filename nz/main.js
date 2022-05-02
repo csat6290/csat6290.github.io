@@ -91,3 +91,10 @@ statusColor = "green";
         color: statusColor,
     }).addTo(map).bindPopup(popup);
 }
+
+
+L.control.fullscreen().addTo(map);
+
+L.control.scale({
+    imperial: false,
+}).addTo(map)
