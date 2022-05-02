@@ -92,6 +92,21 @@ statusColor = "green";
     }).addTo(map).bindPopup(popup);
 }
 
+let layerControl = L.control.layers({
+    "Open Street Map": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}
+    ),
+
+    "Open Street Map (topographisch)": L.tileLayer.provider("OpenTopoMap"),
+
+    "ÖPNV Karte": L.tileLayer.provider("OPNVKarte"),
+
+    "ESRI Orthofoto": L.tileLayer.provider("Esri.WorldImagery"),
+
+}).addTo(map);
+
+layerControl.expand();
+
+let sightLayer = L.featureGroup();
 
 L.control.fullscreen().addTo(map);
 
