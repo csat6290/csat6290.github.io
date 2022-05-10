@@ -33,14 +33,30 @@ let coords = [
 
 // popup Liste erstellt mit einer Variable und anschließend die Etappenvariable benutzt um die Etappe zu beschriften
 
+startlayer = L.tileLayer.provider("OpenStreetMap.Mapnik")
+
+//warum wird der Startlayer nicht angezeigt? In der Minimap funktioniert die Karte. 
 
 let map = L.map('map').setView(coords, zoom);
 
+let layerControl = L.control.layers({
+    "Open Street Map": startlayer,
+
+    "Open Street Map (topographisch)": L.tileLayer.provider("OpenTopoMap"),
+
+    "ÖPNV Karte": L.tileLayer.provider("OPNVKarte"),
+
+    "ESRI Orthofoto": L.tileLayer.provider("Esri.WorldImagery"),
+
+}).addTo(map);
+
+
+
 // let sind die Variablen
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+/*L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+}).addTo(map);*/
 
 for (let etappe of ETAPPEN) {
 
@@ -92,21 +108,6 @@ for (let hut of HUTS) {
     }).addTo(map).bindPopup(popup);
 }
 
-let layerControl = L.control.layers({
-    "Open Street Map": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }),
-
-    "Open Street Map (topographisch)": L.tileLayer.provider("OpenTopoMap"),
-
-    "ÖPNV Karte": L.tileLayer.provider("OPNVKarte"),
-
-    "ESRI Orthofoto": L.tileLayer.provider("Esri.WorldImagery"),
-
-}).addTo(map);
-
-layerControl.expand();
-
 let sightLayer = L.featureGroup();
 
 L.control.fullscreen().addTo(map);
@@ -116,8 +117,8 @@ L.control.scale({
 }).addTo(map)
 
 let miniMap = new L.Control.MiniMap(
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    })).addTo(map);
+    L.tileLayer.provider("OpenStreetMap.Mapnik"), {
+        toggleDisplay: true
+    }
+).addTo(map);
 
-    //müsste jetzt klappen
