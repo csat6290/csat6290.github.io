@@ -35,9 +35,15 @@ let coords = [
 
 startlayer = L.tileLayer.provider("OpenStreetMap.Mapnik")
 
-//warum wird der Startlayer nicht angezeigt? In der Minimap funktioniert die Karte. 
+let map = L.map('map', {
+    center:coords,
+    zoom:zoom,
+    layers:[
+        startlayer
+    ]
+});
 
-let map = L.map('map').setView(coords, zoom);
+//Fehler gefunden
 
 let layerControl = L.control.layers({
     "Open Street Map": startlayer,
